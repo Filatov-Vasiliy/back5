@@ -287,7 +287,7 @@ try {
     print('Error : ' . $e->getMessage());
     exit();
   }
-  }
+  
 
   // Сохранение в XML-документ.
 
