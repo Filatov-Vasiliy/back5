@@ -279,6 +279,15 @@ setcookie('pass', $pass);
 // TODO: Сохранение данных формы, логина и хеш md5() пароля в базу данных.
 // ...
 
+try {
+    $stmt = $db->prepare("INSERT INTO baza (login,password) VALUE (:login,:pass)");
+    $stmt -> execute(['login'=>$login,'pass'=>$pass]);
+  }
+  catch(PDOException $e){
+    print('Error : ' . $e->getMessage());
+    exit();
+  }
+  }
 
   // Сохранение в XML-документ.
 
